@@ -5,7 +5,7 @@ This project predicts student exam scores based on a variety of factors such as 
 1. [Project Motivation](#motivation)
 2. [Data source](#source)
 3. [Data Description](#data)
-4. [Technology used](technology)
+4. [Technology used](#technology)
 5. [Project Structure](#structure)
 6. [Modeling](#modeling)
    - Random Forest Regression
