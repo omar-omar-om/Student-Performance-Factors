@@ -56,15 +56,11 @@ This project was developed using the following technologies and libraries:
 The Random Forest model was tuned using grid search with cross-validation. Important hyperparameters like `n_estimators`, `max_depth`, `min_samples_split`, and `min_samples_leaf` were optimized. The performance was measured using the following metrics:
 - **Best R² Score**: *0.6377760157937276*
 - **Best Hyperparameters**: *Best parameters found:  {'max_depth': None, 'max_features': 24, 'min_samples_leaf': 3, 'min_samples_split': 2, 'n_estimators': 125}
-Best R2 score found:  0.629291355621227
-*
 
 ### **XGBoost Regression**
 Similarly, XGBoost was used for regression with hyperparameter tuning to optimize performance. Key parameters such as `learning_rate`, `n_estimators`, and `max_depth` were adjusted for the best results.
 - **Best R² Score**: *0.6994317566723831*
 - **Best Hyperparameters**: *Best parameters found:  {'colsample_bytree': 0.7, 'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 200, 'subsample': 0.7}
-Best R2 score found:  0.7030116121487233
-*
 
 ## **Evaluation Metrics** <a name="evaluation"></a>
 The performance of both models was evaluated using three key metrics:
