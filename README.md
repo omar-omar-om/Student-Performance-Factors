@@ -5,13 +5,14 @@ This project predicts student exam scores based on a variety of factors such as 
 1. [Project Motivation](#motivation)
 2. [Data source](#source)
 3. [Data Description](#data)
-4. [Project Structure](#structure)
-5. [Modeling](#modeling)
+4. [Technology used](technology)
+5. [Project Structure](#structure)
+6. [Modeling](#modeling)
    - Random Forest Regression
    - XGBoost Regression
-6. [Evaluation Metrics](#evaluation)
-7. [Feature Importance](#feature-importance)
-8. [Contributing](#contributing)
+7. [Evaluation Metrics](#evaluation)
+8. [Feature Importance](#feature-importance)
+9. [Contributing](#contributers)
 
 
 ## **Project Motivation** <a name="motivation"></a>
@@ -28,6 +29,18 @@ The dataset contains the following columns:
 - **Categorical Features**: `Parental_Involvement`, `Access_to_Resources`, `Extracurricular_Activities`, `Motivation_Level`, `Internet_Access`, `Family_Income`, `Teacher_Quality`, `School_Type`, `Peer_Influence`, `Learning_Disabilities`, `Parental_Education_Level`, `Distance_from_Home`, `Gender`
 
 The target variable for this project is `Exam_Score`.
+
+## **Technology used** <a name="technology"></a>
+This project was developed using the following technologies and libraries:
+
+- **Python**: The programming language used for the project.
+- **Pandas**: For data manipulation and analysis.
+- **NumPy**: For numerical computations.
+- **Matplotlib & Seaborn**: For data visualization and plotting.
+- **Scikit-learn**: For machine learning models, including Random Forest Regression and cross-validation.
+- **XGBoost**: For implementing XGBoost Regression models.
+- **Jupyter Notebook**: For interactive development and documentation.
+- **GridSearchCV**: For hyperparameter tuning of machine learning models.
 
 ## **Project Structure** <a name="structure"></a>
 - **Data Cleaning and Preprocessing**: Missing values are handled, and categorical features are encoded.
@@ -69,4 +82,7 @@ For the Random Forest and XGBoost models, feature importance was analyzed to und
 
 
 ![94a2a04b-d71a-4cc0-b503-cdb69f2647db](https://github.com/user-attachments/assets/226b5b97-4e0d-4cff-b39e-364ce58627fc)
+
+## **Contributers** <a name="contributers"></a>
+Author: Omar Ibrahim
 
