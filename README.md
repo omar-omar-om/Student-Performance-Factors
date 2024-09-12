@@ -77,7 +77,7 @@ For the Random Forest and XGBoost models, feature importance was analyzed to und
 
 ## **Streamlit App** <a name="streamlit-app"></a>
 The predictive models, including Random Forest and XGBoost, have been deployed as an interactive app using **Streamlit**. This app allows users to input various features such as hours studied, attendance, and extracurricular activities, and provides real-time predictions of student exam scores based on the trained models.  
-- You can access the app [here](your-streamlit-app-link](https://omar-omar-om-student-perfo-streamlit-student-performance-jlgdra.streamlit.app).
+- You can access the app [here](https://omar-omar-om-student-perfo-streamlit-student-performance-jlgdra.streamlit.app).
 
 ## **Contributers** <a name="contributers"></a>
 Author: Omar Ibrahim
