@@ -5,7 +5,7 @@ import numpy as np
 import statsmodels.api as sm
 
 # Train-test split and performance metrics
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # Random Forest Regression model
@@ -28,10 +28,10 @@ st.write(f"Scikit-learn version: {sklearn.__version__}")
 st.title("Student Performance Regression Project")
 
 # Write a brief description
-st.write(""" ... """)  # (Description remains the same)
+st.write(""" This application allows you to explore the student performance dataset, perform exploratory data analysis (EDA), and make predictions on student performance using machine learning models. You can input different features to see how they affect the predicted exam score. """)
 
 # Dataset Description
-st.write(""" ... """)  # (Dataset description remains the same)
+st.write(""" The dataset contains various features related to student performance, such as study hours, attendance, parental involvement, and more. It is used to predict exam scores using machine learning models. """)
 
 # Load and display the dataset for exploration
 df = pd.read_csv('StudentPerformanceFactors.csv')
@@ -156,7 +156,25 @@ plt.close()  # Close the figure to free up memory
 df_encoded = pd.read_csv('cleaned_student_performance_data.csv')
 
 # Add description for ordinal columns
-st.write(""" ... """)  # (Ordinal feature mappings remain the same)
+st.write("""Description for the user to understand the data for prediction purposes:
+- Hours_Studied: Number of hours spent studying per week.
+- Attendance: Percentage of classes attended.
+- Extracurricular_Activities: Participation in extracurricular activities (Yes, No).
+- Sleep_Hours: Average number of hours of sleep per night.
+- Previous_Scores: Scores from previous exams.
+- Internet_Access: Availability of internet access (Yes, No).
+- Tutoring_Sessions: Number of tutoring sessions attended per month.
+- School_Type: Type of school attended (Public, Private).
+- Physical_Activity: Average number of hours of physical activity per week.
+- Learning_Disabilities: Presence of learning disabilities (Yes, No).
+- Parental_Education_Level: Highest education level of parents (High School, College, Postgraduate).
+- Parental Involvement: ['Low' (0), 'Medium' (1), 'High' (2)]
+- Access to Resources: ['Low' (0), 'Medium' (1), 'High' (2)]
+- Motivation Level: ['Low' (0), 'Medium' (1), 'High' (2)]
+- Family Income: ['Low' (0), 'Medium' (1), 'High' (2)]
+- Teacher Quality: ['Low' (0), 'Medium' (1), 'High' (2)]
+- Peer Influence: ['Negative' (0), 'Neutral' (1), 'Positive' (2)]
+- Distance from Home: ['Close' (0), 'Medium' (1), 'Far' (2)]""")
 
 # Define features and target variable
 X = df_encoded.drop(columns=['Exam_Score'], axis=1)
@@ -175,6 +193,10 @@ xgb_model.fit(X_train, y_train)
 
 # Streamlit App for Predictions
 st.title('Student Performance Prediction')
+
+# Initialize session state for button click
+if 'run_model' not in st.session_state:
+    st.session_state.run_model = False
 
 # Define the input fields
 def get_numeric_input(col_name, min_val, max_val):
@@ -218,10 +240,15 @@ user_input_df = pd.DataFrame([user_inputs])
 
 # Add a button to run the model
 if st.button('Run Model'):
-    # Make predictions with both models
+    st.session_state.run_model = True
+
+if st.session_state.run_model:
+    # Ensure model is only run when button is clicked
+    st.session_state.run_model = False
+    # Predict using Random Forest and XGBoost
     rf_prediction = rf_model.predict(user_input_df)
     xgb_prediction = xgb_model.predict(user_input_df)
-    
-    # Display the results
+
+    st.subheader("Prediction Results")
     st.write(f"Random Forest Prediction: {rf_prediction[0]:.2f}")
     st.write(f"XGBoost Prediction: {xgb_prediction[0]:.2f}")
